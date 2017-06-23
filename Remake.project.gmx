@@ -29,6 +29,7 @@
     <sprite>sprites\spr_rd_spin</sprite>
     <sprite>sprites\spr_rd_jump</sprite>
     <sprite>sprites\spr_rd_jump2</sprite>
+    <sprite>sprites\spr_rd_part</sprite>
     <sprite>sprites\spr_rd</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_crate</sprite>
@@ -44,6 +45,7 @@
   <scripts name="scripts">
     <script>scripts\scr_drop_money.gml</script>
     <script>scripts\scr_make_parts.gml</script>
+    <script>scripts\scr_shadowed_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_money</font>

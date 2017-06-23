@@ -26,8 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>if (instance_number(obj_player) &gt; 0) {
-    view_xview[0] = round(obj_player.x - view_wview[0] / 2);
-    view_yview[0] = round(obj_player.y - view_hview[0] / 2);
+    var vx = round(obj_player.x - view_wview[0] / 2);
+    var vy = round(obj_player.y - view_hview[0] / 2);
+    
+    if (vx &lt; 0)
+        vx = 0;
+    else if (vx &gt; room_width - view_wview[0])
+        vx = room_width - view_wview[0];
+    if (vy &lt; 0)
+        vy = 0;
+    else if (vy &gt; room_height - view_hview[0])
+        vy = room_height - view_hview[0];
+        
+    view_xview[0] = vx;
+    view_yview[0] = vy;
     
     instance_deactivate_object(obj_deactivateme);
     instance_activate_region(view_xview[0] = 64, view_yview[0] - 64, view_wview[0] + 128, view_hview[0] + 128, true);

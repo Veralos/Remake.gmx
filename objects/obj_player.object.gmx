@@ -69,6 +69,20 @@ max_grav = 0.2;
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(snd_die, 0, false);
+
+var part = instance_create(x, y, obj_part);
+part.sprite = spr_rd_part;
+for (var i = 0; i &lt; 2; i++) {
+    var part = instance_create(x, y, obj_part);
+    part.sprite = spr_rd_part;
+    part.frame = 1;
+}
+for (var i = 0; i &lt; 2; i++) {
+    var part = instance_create(x, y, obj_part);
+    part.sprite = spr_rd_part;
+    part.frame = 2;
+}
+
 obj_control.alarm[0] = 30;
 </string>
           </argument>

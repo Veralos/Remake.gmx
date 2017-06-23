@@ -73,10 +73,7 @@
             <kind>1</kind>
             <string>draw_set_font(fnt_money);
 
-draw_set_color(c_black);
-draw_text(view_xview[0] + 9, view_yview[0] + 9, "$" + string(global.money));
-draw_set_color(c_white);
-draw_text(view_xview[0] + 7, view_yview[0] + 7, "$" + string(global.money));
+scr_shadowed_text(view_xview[0] + 8, view_yview[0] + 8, "$" + string(global.money), 1);
 
 draw_text(view_xview[0] + 64, view_yview[0], instance_number(obj_money));
 </string>
