@@ -25,11 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>level_list = ds_list_create();
+            <string>audio_stop_all();
+
+level_list = ds_list_create();
 ds_list_add(level_list, "Shop", "Neat Street", "Forest of Fortune", "The Volcano", "Sky Fly", "Techno Terror", "Final Showdown");
 
-room_list = ds_list_create();
-ds_list_add(room_list, -1, -1, -1, rm_test, -1, -1, -1);
+volcano_room_list = ds_list_create();
+ds_list_add(volcano_room_list, rm_volcano1, rm_test);
+
+room_list_list = ds_list_create();
+ds_list_add(room_list_list, -1, -1, -1, volcano_room_list, -1, -1, -1);
+
+music_list = ds_list_create();
+ds_list_add(music_list, -1, -1, snd_track2, snd_track4, snd_track3, snd_track1, -1);
 
 selected = 0;
 </string>
@@ -71,10 +79,12 @@ if (selected &lt; 0)
     //selected = ds_list_size(level_list) - 1;
     
 if (keyboard_check_pressed(ord('A'))) {
-    var go_room = ds_list_find_value(room_list, selected);
-    if (room_exists(go_room)) {
+    global.room_list = ds_list_find_value(room_list_list, selected);
+    global.room_index = 0;
+    if (!ds_list_empty(global.room_list)) {
         audio_play_sound(snd_confirm, 0, false);
-        room_goto(go_room);
+        audio_play_sound(ds_list_find_value(music_list, selected), 1, true);
+        room_goto(ds_list_find_value(global.room_list, 0));
     }
     else
         audio_play_sound(snd_error, 0, false);

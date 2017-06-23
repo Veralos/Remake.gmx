@@ -16,6 +16,12 @@
     <sound>sound\snd_select</sound>
     <sound>sound\snd_confirm</sound>
     <sound>sound\snd_error</sound>
+    <sound>sound\snd_break_cage</sound>
+    <sound>sound\snd_track1</sound>
+    <sound>sound\snd_track2</sound>
+    <sound>sound\snd_track3</sound>
+    <sound>sound\snd_track4</sound>
+    <sound>sound\snd_complete</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_volcano_floor_edge</sprite>
@@ -42,7 +48,8 @@
     <sprite>sprites\spr_volcano_wall</sprite>
     <sprite>sprites\spr_volcano_wall_edge</sprite>
     <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\sprite24</sprite>
+    <sprite>sprites\spr_cage</sprite>
+    <sprite>sprites\spr_cage_part</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -61,6 +68,7 @@
     <object>objects\obj_draw_game</object>
     <object>objects\obj_floor</object>
     <object>objects\obj_crate</object>
+    <object>objects\obj_cage</object>
     <object>objects\obj_spin</object>
     <object>objects\obj_part</object>
     <object>objects\obj_money</object>
@@ -79,6 +87,7 @@
   <rooms name="rooms">
     <room>rooms\rm_display</room>
     <room>rooms\rm_level_select</room>
+    <room>rooms\rm_volcano1</room>
     <room>rooms\rm_test</room>
   </rooms>
   <help>

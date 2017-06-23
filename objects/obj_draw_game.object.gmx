@@ -42,7 +42,7 @@
     view_yview[0] = vy;
     
     instance_deactivate_object(obj_deactivateme);
-    instance_activate_region(view_xview[0] = 64, view_yview[0] - 64, view_wview[0] + 128, view_hview[0] + 128, true);
+    instance_activate_region(view_xview[0] - 64, view_yview[0] - 64, view_wview[0] + 128, view_hview[0] + 128, true);
 }
 </string>
           </argument>
