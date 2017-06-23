@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,30 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.money = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_restart();
+            <string>level_list = ds_list_create();
+ds_list_add(level_list, "Shop", "Neat Street", "Forest of Fortune", "The Volcano", "Sky Fly", "Techno Terror", "Final Showdown");
+
+room_list = ds_list_create();
+ds_list_add(room_list, -1, -1, -1, rm_test, -1, -1, -1);
+
+selected = 0;
 </string>
           </argument>
         </arguments>
@@ -71,8 +54,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_escape))
-    room_goto(rm_level_select);
+            <string>if (keyboard_check_pressed(vk_down)) {
+    audio_play_sound(snd_select, 0, false);
+    selected++;
+}
+if (keyboard_check_pressed(vk_up)) {
+    audio_play_sound(snd_select, 0, false);
+    selected--;
+}
+    
+if (selected &gt; ds_list_size(level_list) - 1)
+    selected = ds_list_size(level_list) - 1;
+    //selected = 0;
+if (selected &lt; 0)
+    selected = 0;
+    //selected = ds_list_size(level_list) - 1;
+    
+if (keyboard_check_pressed(ord('A'))) {
+    var go_room = ds_list_find_value(room_list, selected);
+    if (room_exists(go_room)) {
+        audio_play_sound(snd_confirm, 0, false);
+        room_goto(go_room);
+    }
+    else
+        audio_play_sound(snd_error, 0, false);
+}
 </string>
           </argument>
         </arguments>
@@ -95,13 +101,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_money);
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
+            <string>draw_set_color(make_color_rgb(200, 192, 106));
+draw_rectangle(0, 0, room_width, room_height, false);
 
-scr_shadowed_text(view_xview[0] + 8, view_yview[0] + 8, "$" + string(global.money), 1);
+draw_set_font(fnt_level_select);
+draw_set_halign(fa_middle);
+draw_set_valign(fa_center);
 
-draw_text(view_xview[0] + 64, view_yview[0], instance_number(obj_money));
+for (var i = 0; i &lt; ds_list_size(level_list); i++) {
+    text = ds_list_find_value(level_list, i);
+    if (i == selected)
+        text = "&gt; " + text + " &lt;";
+    scr_shadowed_text(room_width / 2, room_height / 2 + (i - selected) * 48, text, 1);
+}
 </string>
           </argument>
         </arguments>

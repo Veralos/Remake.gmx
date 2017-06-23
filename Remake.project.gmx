@@ -13,6 +13,9 @@
     <sound>sound\snd_collect</sound>
     <sound>sound\snd_ghost_die</sound>
     <sound>sound\snd_die</sound>
+    <sound>sound\snd_select</sound>
+    <sound>sound\snd_confirm</sound>
+    <sound>sound\snd_error</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_volcano_floor_edge</sprite>
@@ -39,6 +42,7 @@
     <sprite>sprites\spr_volcano_wall</sprite>
     <sprite>sprites\spr_volcano_wall_edge</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\sprite24</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -49,6 +53,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_money</font>
+    <font>fonts\fnt_level_select</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
@@ -69,11 +74,12 @@
     <object>objects\obj_ghost</object>
     <object>objects\obj_background</object>
     <object>objects\obj_deactivateme</object>
+    <object>objects\obj_level_select</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_display</room>
+    <room>rooms\rm_level_select</room>
     <room>rooms\rm_test</room>
-    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
