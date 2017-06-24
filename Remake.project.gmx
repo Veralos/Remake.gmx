@@ -68,6 +68,9 @@
     <sprites name="lab">
       <sprite>sprites\spr_ice</sprite>
       <sprite>sprites\spr_ice_edge</sprite>
+      <sprite>sprites\spr_lab_wall</sprite>
+      <sprite>sprites\spr_lab_wall_edge</sprite>
+      <sprite>sprites\spr_lab_floor</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_crate</sprite>
@@ -91,12 +94,12 @@
     <objects name="volcano">
       <object>objects\obj_cage</object>
       <object>objects\obj_volcano_floor</object>
+      <object>objects\obj_lab_floor</object>
       <object>objects\obj_volcano_wall</object>
       <object>objects\obj_volcano_background</object>
     </objects>
     <objects name="sky">
       <object>objects\obj_sky_floor</object>
-      <object>objects\obj_ice</object>
       <object>objects\obj_sky_background</object>
       <object>objects\obj_sky_wall</object>
       <object>objects\obj_fanbox</object>
@@ -107,6 +110,10 @@
       <object>objects\obj_ghost_move_h</object>
       <object>objects\obj_ghost_move_v</object>
       <object>objects\obj_ghost</object>
+    </objects>
+    <objects name="lab">
+      <object>objects\obj_lab_wall</object>
+      <object>objects\obj_ice</object>
     </objects>
     <object>objects\obj_wall</object>
     <object>objects\obj_player</object>
