@@ -99,7 +99,6 @@
     <instance objName="obj_fanbox" x="112" y="64" name="inst_4547BBF0" locked="0" code="dir = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fanbox" x="128" y="64" name="inst_365C7661" locked="0" code="dir = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fanbox" x="144" y="64" name="inst_33F94B68" locked="0" code="dir = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fanbox" x="80" y="64" name="inst_FCF31204" locked="0" code="dir = 270;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sky_floor" x="48" y="256" name="inst_81C14D12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sky_floor" x="48" y="272" name="inst_08837E26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sky_floor" x="48" y="288" name="inst_633A98DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

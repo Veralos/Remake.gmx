@@ -49,6 +49,7 @@ deccel = 1/2;
 max_speed = 3;
 max_z_speed = 1;
 max_grav = 0.2;
+ice_mod = 1/8;
 </string>
           </argument>
         </arguments>
@@ -111,19 +112,38 @@ obj_control.alarm[0] = 30;
             <kind>1</kind>
             <string>//ground movement
 
+var friction_mod = 1;
+if (place_meeting(x, y, obj_ice)) {
+    if (spin &gt; 3) {
+        audio_play_sound(snd_no_spin, 0, false);
+        spin = 3;
+    }
+    friction_mod = ice_mod;
+}
+
 if (keyboard_check(vk_left))
-    x_speed -= accel;
+    x_speed -= accel * friction_mod;
 if (keyboard_check(vk_right))
-    x_speed += accel;
-x_speed -= sign(x_speed) * deccel;
+    x_speed += accel * friction_mod;
+
+var prev_sign = sign(x_speed);
+x_speed -= sign(x_speed) * deccel * friction_mod;
+if (sign(x_speed) != prev_sign)
+    x_speed = 0;
+
 if (abs(x_speed) &gt; max_speed)
     x_speed = sign(x_speed) * max_speed;
     
 if (keyboard_check(vk_up))
-    y_speed -= accel;
+    y_speed -= accel * friction_mod;
 if (keyboard_check(vk_down))
-    y_speed += accel;
-y_speed -= sign(y_speed) * deccel;
+    y_speed += accel * friction_mod;
+    
+var prev_sign = sign(y_speed);
+y_speed -= sign(y_speed) * deccel * friction_mod;
+if (sign(y_speed) != prev_sign)
+    y_speed = 0;
+    
 if (abs(y_speed) &gt; max_speed)
     y_speed = sign(y_speed) * max_speed;
     
@@ -192,8 +212,14 @@ if (spin &gt; 0) {
     spin -= 0.5;
 }
 if (keyboard_check_pressed(ord('S')) &amp;&amp; z == 0 &amp;&amp; spin == 0) {
-    audio_play_sound(snd_spin, 0, false);
-    spin = 8;
+    if (friction_mod == ice_mod) {
+        audio_play_sound(snd_no_spin, 0, false);
+        spin = 3;
+    }
+    else {
+        audio_play_sound(snd_spin, 0, false);
+        spin = 8;
+    }
 }
 if (grav != 0)
     spin = 0;
