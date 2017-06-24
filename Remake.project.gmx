@@ -54,6 +54,10 @@
     <sprite>sprites\spr_sky_floor_edge</sprite>
     <sprite>sprites\spr_clouds1</sprite>
     <sprite>sprites\spr_clouds2</sprite>
+    <sprite>sprites\spr_fan</sprite>
+    <sprite>sprites\spr_sky_wall</sprite>
+    <sprite>sprites\spr_fan2</sprite>
+    <sprite>sprites\spr_fanbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -89,6 +93,8 @@
     <object>objects\obj_sky_background</object>
     <object>objects\obj_deactivateme</object>
     <object>objects\obj_level_select</object>
+    <object>objects\obj_sky_wall</object>
+    <object>objects\obj_fanbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_display</room>
