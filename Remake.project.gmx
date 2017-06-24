@@ -24,40 +24,48 @@
     <sound>sound\snd_complete</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_volcano_floor_edge</sprite>
-    <sprite>sprites\spr_volcano_floor</sprite>
     <sprite>sprites\spr_floor</sprite>
+    <sprites name="ghost">
+      <sprite>sprites\spr_ghost_move_part</sprite>
+      <sprite>sprites\spr_ghost_static_part</sprite>
+      <sprite>sprites\spr_ghost_move_reach</sprite>
+      <sprite>sprites\spr_ghost_static_reach</sprite>
+      <sprite>sprites\spr_ghost_static</sprite>
+    </sprites>
+    <sprites name="player">
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_spin</sprite>
+      <sprite>sprites\spr_rd_run</sprite>
+      <sprite>sprites\spr_rd_jump</sprite>
+      <sprite>sprites\spr_rd_jump2</sprite>
+      <sprite>sprites\spr_rd_part</sprite>
+      <sprite>sprites\spr_rd</sprite>
+      <sprite>sprites\spr_rd_spin</sprite>
+    </sprites>
+    <sprites name="volcano">
+      <sprite>sprites\spr_volcano_floor_edge</sprite>
+      <sprite>sprites\spr_volcano_floor</sprite>
+      <sprite>sprites\spr_volcano_wall</sprite>
+      <sprite>sprites\spr_volcano_wall_edge</sprite>
+      <sprite>sprites\spr_cage</sprite>
+      <sprite>sprites\spr_cage_part</sprite>
+    </sprites>
+    <sprites name="sky">
+      <sprite>sprites\spr_sky_floor</sprite>
+      <sprite>sprites\spr_sky_floor_edge</sprite>
+      <sprite>sprites\spr_clouds1</sprite>
+      <sprite>sprites\spr_clouds2</sprite>
+      <sprite>sprites\spr_fan</sprite>
+      <sprite>sprites\spr_sky_wall</sprite>
+      <sprite>sprites\spr_fan2</sprite>
+      <sprite>sprites\spr_fanbox</sprite>
+    </sprites>
     <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_ghost_move_part</sprite>
-    <sprite>sprites\spr_ghost_static_part</sprite>
-    <sprite>sprites\spr_ghost_move_reach</sprite>
-    <sprite>sprites\spr_ghost_static_reach</sprite>
-    <sprite>sprites\spr_ghost_static</sprite>
-    <sprite>sprites\spr_spin</sprite>
-    <sprite>sprites\spr_rd_run</sprite>
-    <sprite>sprites\spr_rd_spin</sprite>
-    <sprite>sprites\spr_rd_jump</sprite>
-    <sprite>sprites\spr_rd_jump2</sprite>
-    <sprite>sprites\spr_rd_part</sprite>
-    <sprite>sprites\spr_rd</sprite>
-    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_crate_part</sprite>
     <sprite>sprites\spr_money</sprite>
     <sprite>sprites\spr_moneybag</sprite>
-    <sprite>sprites\spr_volcano_wall</sprite>
-    <sprite>sprites\spr_volcano_wall_edge</sprite>
     <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\spr_cage</sprite>
-    <sprite>sprites\spr_cage_part</sprite>
-    <sprite>sprites\spr_sky_floor</sprite>
-    <sprite>sprites\spr_sky_floor_edge</sprite>
-    <sprite>sprites\spr_clouds1</sprite>
-    <sprite>sprites\spr_clouds2</sprite>
-    <sprite>sprites\spr_fan</sprite>
-    <sprite>sprites\spr_sky_wall</sprite>
-    <sprite>sprites\spr_fan2</sprite>
-    <sprite>sprites\spr_fanbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -71,37 +79,47 @@
     <font>fonts\fnt_level_select</font>
   </fonts>
   <objects name="objects">
+    <objects name="volcano">
+      <object>objects\obj_cage</object>
+      <object>objects\obj_volcano_floor</object>
+      <object>objects\obj_volcano_wall</object>
+      <object>objects\obj_volcano_background</object>
+    </objects>
+    <objects name="sky">
+      <object>objects\obj_sky_floor</object>
+      <object>objects\obj_sky_background</object>
+      <object>objects\obj_sky_wall</object>
+      <object>objects\obj_fanbox</object>
+    </objects>
+    <objects name="ghost">
+      <object>objects\obj_ghost_static</object>
+      <object>objects\obj_ghost_move_h</object>
+      <object>objects\obj_ghost_move_v</object>
+      <object>objects\obj_ghost</object>
+    </objects>
     <object>objects\obj_wall</object>
     <object>objects\obj_player</object>
     <object>objects\obj_draw_game</object>
     <object>objects\obj_floor</object>
     <object>objects\obj_crate</object>
-    <object>objects\obj_cage</object>
     <object>objects\obj_spin</object>
     <object>objects\obj_part</object>
     <object>objects\obj_money</object>
     <object>objects\obj_moneybag</object>
     <object>objects\obj_control</object>
-    <object>objects\obj_volcano_floor</object>
-    <object>objects\obj_sky_floor</object>
-    <object>objects\obj_volcano_wall</object>
-    <object>objects\obj_ghost_static</object>
-    <object>objects\obj_ghost_move_h</object>
-    <object>objects\obj_ghost_move_v</object>
-    <object>objects\obj_ghost</object>
-    <object>objects\obj_volcano_background</object>
-    <object>objects\obj_sky_background</object>
     <object>objects\obj_deactivateme</object>
     <object>objects\obj_level_select</object>
-    <object>objects\obj_sky_wall</object>
-    <object>objects\obj_fanbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_display</room>
     <room>rooms\rm_level_select</room>
-    <room>rooms\rm_volcano1</room>
+    <rooms name="volcano">
+      <room>rooms\rm_volcano1</room>
+    </rooms>
+    <rooms name="sky">
+      <room>rooms\rm_sky1</room>
+    </rooms>
     <room>rooms\rm_test</room>
-    <room>rooms\rm_sky1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
