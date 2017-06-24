@@ -27,6 +27,70 @@
             <kind>1</kind>
             <string>dir = 0;
 animate = 0;
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_break, 0, false);
+scr_make_parts(x + 8, y + 8, spr_fanbox_part, 3, 5, 1);
+
+for (var i = 0; i &lt; array_length_1d(wind_array); i++) {
+    with (wind_array[i])
+        instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var i = 0;
+while (
+    x + 8 + lengthdir_x(16 * (i + 1), dir) &gt;= 0 &amp;&amp;
+    x + 8 + lengthdir_x(16 * (i + 1), dir) &lt; room_width &amp;&amp;
+    y + 8 + lengthdir_y(16 * (i + 1), dir) &gt;= 0 &amp;&amp;
+    y + 8 + lengthdir_y(16 * (i + 1), dir) &lt; room_height
+) {
+    var wind = instance_create(x + 8 + lengthdir_x(16 * (i + 1), dir), y + 8 + lengthdir_y(16 * (i + 1), dir), obj_wind);
+    wind.dir = dir;
+    wind_array[i] = wind;
+    i++;
+}
 </string>
           </argument>
         </arguments>
@@ -52,6 +116,29 @@ animate = 0;
             <string>animate += 0.5;
 if (animate &gt;= 8)
     animate -= 8;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_spin">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

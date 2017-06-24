@@ -150,6 +150,18 @@ else if (y_move != 0){
     y_speed = 0;
 }
 
+//wind
+
+var wind = instance_place(x, y, obj_wind);
+if (instance_exists(wind)) {
+    dir = wind.dir;
+    push = wind.push;
+    if (place_free(x + lengthdir_x(push, dir), y + lengthdir_y(push, dir))) {
+        x += lengthdir_x(push, dir);
+        y += lengthdir_y(push, dir);
+    }
+}
+
 //air movement
 
 if (keyboard_check_pressed(ord('A')) &amp;&amp; z == 0 &amp;&amp; spin == 0) {

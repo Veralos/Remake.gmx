@@ -59,6 +59,7 @@
       <sprite>sprites\spr_sky_wall</sprite>
       <sprite>sprites\spr_fan2</sprite>
       <sprite>sprites\spr_fanbox</sprite>
+      <sprite>sprites\spr_fanbox_part</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_crate</sprite>
@@ -66,6 +67,7 @@
     <sprite>sprites\spr_money</sprite>
     <sprite>sprites\spr_moneybag</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\spr_wind</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -90,6 +92,7 @@
       <object>objects\obj_sky_background</object>
       <object>objects\obj_sky_wall</object>
       <object>objects\obj_fanbox</object>
+      <object>objects\obj_wind</object>
     </objects>
     <objects name="ghost">
       <object>objects\obj_ghost_static</object>
@@ -118,6 +121,10 @@
     </rooms>
     <rooms name="sky">
       <room>rooms\rm_sky1</room>
+      <room>rooms\rm_sky2</room>
+      <room>rooms\rm_sky3</room>
+      <room>rooms\rm_sky4</room>
+      <room>rooms\rm_sky5</room>
     </rooms>
     <room>rooms\rm_test</room>
   </rooms>
