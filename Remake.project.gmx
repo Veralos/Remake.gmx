@@ -22,6 +22,8 @@
     <sound>sound\snd_track3</sound>
     <sound>sound\snd_track4</sound>
     <sound>sound\snd_complete</sound>
+    <sound>sound\snd_track5</sound>
+    <sound>sound\snd_track6</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_floor</sprite>
