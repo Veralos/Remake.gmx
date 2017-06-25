@@ -88,6 +88,7 @@
     <sprite>sprites\spr_firebox</sprite>
     <sprite>sprites\spr_firebox_arrow</sprite>
     <sprite>sprites\spr_fireball</sprite>
+    <sprite>sprites\spr_water</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -106,6 +107,7 @@
       <object>objects\obj_volcano_floor</object>
       <object>objects\obj_volcano_wall</object>
       <object>objects\obj_volcano_background</object>
+      <object>objects\obj_forest_background</object>
     </objects>
     <objects name="sky">
       <object>objects\obj_sky_floor</object>
@@ -164,6 +166,7 @@
     <rooms name="lab">
       <room>rooms\rm_lab1</room>
       <room>rooms\rm_lab2</room>
+      <room>rooms\rm_lab3</room>
     </rooms>
     <room>rooms\rm_test</room>
   </rooms>

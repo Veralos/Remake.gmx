@@ -310,7 +310,6 @@
     <instance objName="obj_ghost_static" x="96" y="32" name="inst_289B6DC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ghost_static" x="80" y="32" name="inst_47227BC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ghost_static" x="64" y="32" name="inst_BEC3A6F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_volcano_background" x="16" y="112" name="inst_960916DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ghost_static" x="288" y="48" name="inst_99D90BCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ghost_static" x="288" y="64" name="inst_91F3FDD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ghost_move_v" x="80" y="240" name="inst_6C24BF90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -608,6 +607,7 @@
     <instance objName="obj_firebox" x="144" y="128" name="inst_7B9A5E20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebox" x="144" y="144" name="inst_9D625B48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firebox" x="144" y="160" name="inst_29DAC69D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forest_background" x="16" y="96" name="inst_9023590F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
