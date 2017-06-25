@@ -85,6 +85,9 @@
     <sprite>sprites\spr_money</sprite>
     <sprite>sprites\spr_moneybag</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\spr_firebox</sprite>
+    <sprite>sprites\spr_firebox_arrow</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -126,6 +129,8 @@
       <object>objects\obj_snow</object>
       <object>objects\obj_button1</object>
       <object>objects\obj_button2</object>
+      <object>objects\obj_firebox</object>
+      <object>objects\obj_fireball</object>
     </objects>
     <objects name="desert">
       <object>objects\obj_desert_background</object>
@@ -158,6 +163,7 @@
     </rooms>
     <rooms name="lab">
       <room>rooms\rm_lab1</room>
+      <room>rooms\rm_lab2</room>
     </rooms>
     <room>rooms\rm_test</room>
   </rooms>
