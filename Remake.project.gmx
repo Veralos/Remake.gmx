@@ -25,6 +25,7 @@
     <sound>sound\snd_track5</sound>
     <sound>sound\snd_track6</sound>
     <sound>sound\snd_no_spin</sound>
+    <sound>sound\snd_button</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_floor</sprite>
@@ -71,6 +72,12 @@
       <sprite>sprites\spr_lab_wall</sprite>
       <sprite>sprites\spr_lab_wall_edge</sprite>
       <sprite>sprites\spr_lab_floor</sprite>
+      <sprite>sprites\spr_snow</sprite>
+      <sprite>sprites\spr_snow_edge</sprite>
+      <sprite>sprites\spr_button1</sprite>
+      <sprite>sprites\spr_button_wall1</sprite>
+      <sprite>sprites\spr_button2</sprite>
+      <sprite>sprites\spr_button_wall2</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_crate</sprite>
@@ -94,7 +101,6 @@
     <objects name="volcano">
       <object>objects\obj_cage</object>
       <object>objects\obj_volcano_floor</object>
-      <object>objects\obj_lab_floor</object>
       <object>objects\obj_volcano_wall</object>
       <object>objects\obj_volcano_background</object>
     </objects>
@@ -113,7 +119,16 @@
     </objects>
     <objects name="lab">
       <object>objects\obj_lab_wall</object>
+      <object>objects\obj_button_wall1</object>
+      <object>objects\obj_button_wall2</object>
       <object>objects\obj_ice</object>
+      <object>objects\obj_lab_floor</object>
+      <object>objects\obj_snow</object>
+      <object>objects\obj_button1</object>
+      <object>objects\obj_button2</object>
+    </objects>
+    <objects name="desert">
+      <object>objects\obj_desert_background</object>
     </objects>
     <object>objects\obj_wall</object>
     <object>objects\obj_player</object>
