@@ -156,6 +156,9 @@
       <room>rooms\rm_sky4</room>
       <room>rooms\rm_sky5</room>
     </rooms>
+    <rooms name="lab">
+      <room>rooms\rm_lab1</room>
+    </rooms>
     <room>rooms\rm_test</room>
   </rooms>
   <help>
