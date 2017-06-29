@@ -192,7 +192,7 @@ if (keyboard_check_pressed(ord('A')) &amp;&amp; z == 0 &amp;&amp; spin == 0) {
 z_speed += grav;
 z += z_speed;
 
-if (z &lt; 0 || !place_meeting(x, y, obj_floor)) {
+if (z &lt; 0 || !(place_meeting(x, y, obj_floor) || place_meeting(x, y, obj_collapse))) {
     grav = max_grav;
 }
 else {
