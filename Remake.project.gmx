@@ -172,6 +172,7 @@
       <room>rooms\rm_lab2</room>
       <room>rooms\rm_lab3</room>
       <room>rooms\rm_lab4</room>
+      <room>rooms\rm_lab5</room>
     </rooms>
     <room>rooms\rm_test</room>
   </rooms>

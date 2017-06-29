@@ -37,7 +37,7 @@ sky_room_list = ds_list_create();
 ds_list_add(sky_room_list, rm_sky1, rm_sky2, rm_sky3, rm_sky4, rm_sky5);
 
 lab_room_list = ds_list_create();
-ds_list_add(lab_room_list, rm_lab4, rm_lab3, rm_lab2, rm_lab1);
+ds_list_add(lab_room_list, rm_lab1, rm_lab2, rm_lab3, rm_lab4, rm_lab5);
 
 room_list_list = ds_list_create();
 ds_list_add(room_list_list, -1, -1, -1, volcano_room_list, sky_room_list, lab_room_list, -1);
