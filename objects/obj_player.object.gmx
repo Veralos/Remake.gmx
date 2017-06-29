@@ -208,10 +208,21 @@ if (z &gt; 0)
     
 //spin attack
 
+var spin_pressed, spin_limit;
+
+if (global.ultra_spin) {
+    spin_pressed = keyboard_check(ord('S'));
+    spin_limit = 4;
+}
+else {
+    spin_pressed = keyboard_check_pressed(ord('S'));
+    spin_limit = 0;
+}
+
 if (spin &gt; 0) {
     spin -= 0.5;
 }
-if (keyboard_check_pressed(ord('S')) &amp;&amp; z == 0 &amp;&amp; spin == 0) {
+if (spin_pressed &amp;&amp; z == 0 &amp;&amp; spin &lt;= spin_limit) {
     if (friction_mod == ice_mod) {
         audio_play_sound(snd_no_spin, 0, false);
         spin = 3;

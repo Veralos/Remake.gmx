@@ -49,6 +49,9 @@
       <sprite>sprites\spr_rd</sprite>
       <sprite>sprites\spr_rd_spin</sprite>
     </sprites>
+    <sprites name="forest">
+      <sprite>sprites\spr_water</sprite>
+    </sprites>
     <sprites name="volcano">
       <sprite>sprites\spr_volcano_floor_edge</sprite>
       <sprite>sprites\spr_volcano_floor</sprite>
@@ -81,6 +84,16 @@
       <sprite>sprites\spr_button_wall1</sprite>
       <sprite>sprites\spr_button2</sprite>
       <sprite>sprites\spr_button_wall2</sprite>
+      <sprite>sprites\spr_firebox</sprite>
+      <sprite>sprites\spr_firebox_part</sprite>
+      <sprite>sprites\spr_firebox_arrow</sprite>
+      <sprite>sprites\spr_fireball</sprite>
+    </sprites>
+    <sprites name="desert">
+      <sprite>sprites\spr_desert_floor</sprite>
+      <sprite>sprites\spr_desert_floor_edge</sprite>
+      <sprite>sprites\spr_desert_wall</sprite>
+      <sprite>sprites\spr_desert_wall_edge</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_crate</sprite>
@@ -88,11 +101,6 @@
     <sprite>sprites\spr_money</sprite>
     <sprite>sprites\spr_moneybag</sprite>
     <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\spr_firebox</sprite>
-    <sprite>sprites\spr_firebox_part</sprite>
-    <sprite>sprites\spr_firebox_arrow</sprite>
-    <sprite>sprites\spr_fireball</sprite>
-    <sprite>sprites\spr_water</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -106,12 +114,15 @@
     <font>fonts\fnt_level_select</font>
   </fonts>
   <objects name="objects">
+    <objects name="forest">
+      <object>objects\obj_forest_background</object>
+    </objects>
     <objects name="volcano">
       <object>objects\obj_cage</object>
       <object>objects\obj_volcano_floor</object>
       <object>objects\obj_volcano_wall</object>
+      <object>objects\obj_desert_wall</object>
       <object>objects\obj_volcano_background</object>
-      <object>objects\obj_forest_background</object>
     </objects>
     <objects name="sky">
       <object>objects\obj_sky_floor</object>
@@ -140,6 +151,7 @@
     </objects>
     <objects name="desert">
       <object>objects\obj_desert_background</object>
+      <object>objects\obj_desert_floor</object>
     </objects>
     <object>objects\obj_wall</object>
     <object>objects\obj_player</object>
