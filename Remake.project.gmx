@@ -149,6 +149,7 @@
       <object>objects\obj_button2</object>
       <object>objects\obj_firebox</object>
       <object>objects\obj_fireball</object>
+      <object>objects\obj_lab_background</object>
     </objects>
     <objects name="desert">
       <object>objects\obj_desert_background</object>
@@ -188,6 +189,9 @@
       <room>rooms\rm_lab3</room>
       <room>rooms\rm_lab4</room>
       <room>rooms\rm_lab5</room>
+    </rooms>
+    <rooms name="desert">
+      <room>rooms\rm_desert1</room>
     </rooms>
     <room>rooms\rm_test</room>
   </rooms>

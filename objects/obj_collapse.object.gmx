@@ -73,7 +73,7 @@ frame = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (frame &lt; 8) {
+            <string>if (frame &lt; 7.5) {
     visible = true;
     mask_index = spr_floor;
     if (collapse)
@@ -105,7 +105,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!collapse) {
+            <string>if (!collapse &amp;&amp; other.z &gt;= 0) {
     audio_play_sound(snd_collapse, 0, false);
     collapse = true;
     alarm[0] = 120;
