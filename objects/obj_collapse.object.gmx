@@ -6,7 +6,7 @@
   <depth>1010</depth>
   <persistent>0</persistent>
   <parentName>self</parentName>
-  <maskName>spr_floor</maskName>
+  <maskName>spr_collapse</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -75,13 +75,13 @@ frame = 0;
             <kind>1</kind>
             <string>if (frame &lt; 7.5) {
     visible = true;
-    mask_index = spr_floor;
+    mask_index = spr_collapse;
     if (collapse)
         frame += 1;
 }
 else {
     visible = false;
-    mask_index = spr_collapse;
+    mask_index = spr_empty;
 }
 </string>
           </argument>

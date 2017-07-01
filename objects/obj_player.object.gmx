@@ -193,11 +193,18 @@ z_speed += grav;
 z += z_speed;
 
 if (z &lt; 0 || !(place_meeting(x, y, obj_floor) || place_meeting(x, y, obj_collapse))) {
+    if (global.auto_hop &amp;&amp; grav != max_grav &amp;&amp; z == 0 &amp;&amp; spin == 0 &amp;&amp; len &gt;= max_speed) {
+        audio_play_sound(snd_jump, 0, false);
+        z_speed = -max_z_speed * 0.5;
+    }
     grav = max_grav;
 }
 else {
-    if (z_speed &gt; 0)
+    if (z_speed &gt; 0) {
         audio_play_sound(snd_land, 0, false);
+        if (!place_meeting(x, y, obj_ice) &amp;&amp; global.shockwave)
+            instance_create(x, y, obj_spin);
+    }
     z = 0;
     z_speed = 0;
     grav = 0;
