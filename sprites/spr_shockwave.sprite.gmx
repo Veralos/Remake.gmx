@@ -3,7 +3,7 @@
   <type>0</type>
   <xorig>12</xorig>
   <yorigin>12</yorigin>
-  <colkind>2</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
@@ -20,6 +20,9 @@
   <width>24</width>
   <height>24</height>
   <frames>
-    <frame index="0">images\spr_spin_0.png</frame>
+    <frame index="0">images\spr_shockwave_0.png</frame>
+    <frame index="1">images\spr_shockwave_1.png</frame>
+    <frame index="2">images\spr_shockwave_2.png</frame>
+    <frame index="3">images\spr_shockwave_3.png</frame>
   </frames>
 </sprite>

@@ -43,6 +43,7 @@
     <sprites name="player">
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_spin</sprite>
+      <sprite>sprites\spr_shockwave</sprite>
       <sprite>sprites\spr_rd_run</sprite>
       <sprite>sprites\spr_rd_jump</sprite>
       <sprite>sprites\spr_rd_jump2</sprite>
@@ -170,6 +171,7 @@
     <object>objects\obj_control</object>
     <object>objects\obj_deactivateme</object>
     <object>objects\obj_level_select</object>
+    <object>objects\obj_shockwave</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_display</room>

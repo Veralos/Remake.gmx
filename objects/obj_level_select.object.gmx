@@ -185,6 +185,12 @@ for (var i = 0; i &lt; ds_list_size(levels); i ++) {
         text = "&gt; " + text + " &lt;";
     scr_shadowed_text(room_width / 2, room_height / 3 + 48 + i * 20, text, 0.5);
 }
+
+draw_set_font(fnt_money);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
+scr_shadowed_text(view_xview[0] + 8, view_yview[0] + 8, "$" + string(global.money), 0.5);
 </string>
           </argument>
         </arguments>
