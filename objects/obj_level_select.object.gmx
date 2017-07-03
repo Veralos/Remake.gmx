@@ -26,13 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>global.money = 0;
-global.ultra_spin = false;
-global.money_magnet = false;
-global.shockwave = false;
-global.auto_hop = false;
 
 level_list = ds_list_create();
 ds_list_add(level_list, "Shop", "Neat Street", "Forest of Fortune", "The Volcano", "Sky Fly", "Techno Terror", "Final Showdown");
+
+shop_item_list = ds_list_create();
+shop_price_list = ds_list_create();
+global.shop_purchase_list = ds_list_create();
+ds_list_add(shop_item_list, "Shockwave", "Money Magnet", "Auto-Jump", "Rapid Spin");
+ds_list_add(shop_price_list, 2, 4, 6, 8);
+ds_list_add(global.shop_purchase_list, false, false, false, false);
 
 volcano_room_list = ds_list_create();
 ds_list_add(volcano_room_list, rm_test, rm_volcano1, rm_test);
@@ -47,7 +50,7 @@ desert_room_list = ds_list_create();
 ds_list_add(desert_room_list, rm_desert1);
 
 room_list_list = ds_list_create();
-ds_list_add(room_list_list, ds_list_create(), ds_list_create(), ds_list_create(), volcano_room_list, sky_room_list, lab_room_list, desert_room_list);
+ds_list_add(room_list_list, shop_item_list, ds_list_create(), ds_list_create(), volcano_room_list, sky_room_list, lab_room_list, desert_room_list);
 
 music_list = ds_list_create();
 ds_list_add(music_list, -1, snd_track6, snd_track2, snd_track4, snd_track3, snd_track1, snd_track5);
@@ -107,15 +110,28 @@ if (selected_level &lt; 0)
     selected_level = 0;
     
 if (keyboard_check_pressed(ord('A'))) {
-    global.room_list = ds_list_find_value(room_list_list, selected);
-    global.room_index = selected_level;
-    if (!ds_list_empty(global.room_list)) {
-        audio_play_sound(snd_confirm, 0, false);
-        audio_play_sound(ds_list_find_value(music_list, selected), 1, true);
-        room_goto(ds_list_find_value(global.room_list, selected_level));
+    if (selected == 0) {
+        var price = ds_list_find_value(shop_price_list, selected_level);
+        var purchase = ds_list_find_value(global.shop_purchase_list, selected_level);
+        if (!purchase &amp;&amp; global.money &gt;= price) {
+            audio_play_sound(snd_confirm, 0, false);
+            global.money -= price;
+            ds_list_set(global.shop_purchase_list, selected_level, true);
+        }
+        else
+            audio_play_sound(snd_error, 0, false);
     }
-    else
-        audio_play_sound(snd_error, 0, false);
+    else {
+        global.room_list = ds_list_find_value(room_list_list, selected);
+        global.room_index = selected_level;
+        if (!ds_list_empty(global.room_list)) {
+            audio_play_sound(snd_confirm, 0, false);
+            audio_play_sound(ds_list_find_value(music_list, selected), 1, true);
+            room_goto(ds_list_find_value(global.room_list, selected_level));
+        }
+        else
+            audio_play_sound(snd_error, 0, false);
+    }
 }
 </string>
           </argument>
@@ -170,17 +186,30 @@ draw_set_halign(fa_middle);
 draw_set_valign(fa_center);
 
 for (var i = 0; i &lt; ds_list_size(level_list); i++) {
-    text = ds_list_find_value(level_list, i);
-    if (i == selected)
-        text = "&lt; " + text + " &gt;";
+    var text = ds_list_find_value(level_list, i);
+    if (i == selected) {
+        if (selected &gt; 0)
+            text = "&lt; " + text;
+        if (selected &lt; ds_list_size(level_list) - 1)
+            text += " &gt;";
+    }
     scr_shadowed_text(room_width / 2 + (i - selected) * room_width / 2, room_height / 3, text, 1);
 }
 
 draw_set_font(fnt_money);
 
 var levels = ds_list_find_value(room_list_list, selected);
+var text;
 for (var i = 0; i &lt; ds_list_size(levels); i ++) {
-    text = "Level " + string(i + 1);
+    if (selected == 0) {
+        text = ds_list_find_value(shop_item_list, i) + ": ";
+        if (ds_list_find_value(global.shop_purchase_list, i))
+            text += "Purchased";
+        else
+            text += "$" + string(ds_list_find_value(shop_price_list, i));
+    }
+    else
+        text = "Level " + string(i + 1);
     if (i == selected_level)
         text = "&gt; " + text + " &lt;";
     scr_shadowed_text(room_width / 2, room_height / 3 + 48 + i * 20, text, 0.5);
@@ -191,98 +220,6 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 scr_shadowed_text(view_xview[0] + 8, view_yview[0] + 8, "$" + string(global.money), 0.5);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.ultra_spin = !global.ultra_spin;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="18">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.auto_hop = !global.auto_hop;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.shockwave = !global.shockwave;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.money_magnet = !global.money_magnet;
 </string>
           </argument>
         </arguments>

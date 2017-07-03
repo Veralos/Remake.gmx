@@ -68,7 +68,7 @@ follow = false;
 }
 else {
     var range = 24;
-    if (global.money_magnet)
+    if (ds_list_find_value(global.shop_purchase_list, 1))
         range = 48;
     if (instance_number(obj_player) &gt; 0) {
         if (follow) {
