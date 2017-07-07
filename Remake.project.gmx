@@ -30,6 +30,8 @@
     <sound>sound\snd_melt</sound>
     <sound>sound\snd_fireball_destroy</sound>
     <sound>sound\snd_collapse</sound>
+    <sound>sound\snd_level_select_music</sound>
+    <sound>sound\snd_exit</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_floor</sprite>
@@ -90,6 +92,7 @@
       <sprite>sprites\spr_firebox_part</sprite>
       <sprite>sprites\spr_firebox_arrow</sprite>
       <sprite>sprites\spr_fireball</sprite>
+      <sprite>sprites\spr_fireball_part</sprite>
     </sprites>
     <sprites name="desert">
       <sprite>sprites\spr_desert_floor</sprite>
@@ -105,6 +108,8 @@
     <sprite>sprites\spr_money</sprite>
     <sprite>sprites\spr_moneybag</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\spr_breakable</sprite>
+    <sprite>sprites\spr_explosive</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -151,6 +156,7 @@
       <object>objects\obj_button2</object>
       <object>objects\obj_firebox</object>
       <object>objects\obj_fireball</object>
+      <object>objects\obj_fireball_trail</object>
       <object>objects\obj_lab_background</object>
     </objects>
     <objects name="desert">

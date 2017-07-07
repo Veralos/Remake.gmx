@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(snd_fireball_destroy, 0, false);
+
+scr_make_parts(x, y, spr_fireball_part, 3, 5, 1);
 </string>
           </argument>
         </arguments>
@@ -50,6 +52,11 @@
             <kind>1</kind>
             <string>x += lengthdir_x(6, dir);
 y += lengthdir_y(6, dir);
+
+var len = random(6);
+var angle = random(360);
+
+instance_create(x + lengthdir_x(len, angle), y + lengthdir_y(len, angle), obj_fireball_trail);
 </string>
           </argument>
         </arguments>

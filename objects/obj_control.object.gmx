@@ -79,8 +79,10 @@ instance_create(start_x, start_y, obj_player);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_escape))
+            <string>if (keyboard_check_pressed(vk_escape)) {
+    audio_play_sound(snd_exit, 0, false);
     room_goto(rm_level_select);
+}
 </string>
           </argument>
         </arguments>
